@@ -6,25 +6,23 @@ A modern discussion platform that uses AI to facilitate meaningful conversations
 
 ## 🎯 Project Status
 
-### ✅ Phase 1A: Backend Setup - COMPLETE
+### Phase 1A: Initial Backend Setup
 
-The complete backend infrastructure has been implemented and is ready to run.
+The intial backend infrastructure has been implemented and is ready to run.
 
 **What's Done:**
 
-- ✅ Express server with Socket.io
-- ✅ MongoDB schemas (User, Thread, Message, Claim)
-- ✅ Complete REST API (15 endpoints)
-- ✅ LLM integration services (Ollama)
-- ✅ Real-time updates via WebSocket
-- ✅ Fact-checking with web search
-- ✅ Claim detection and verification
-- ✅ Smart intervention policy
-- ✅ Authentication framework (JWT ready)
-- ✅ Request validation (Joi)
-- ✅ Comprehensive documentation
-
-**Files Created:** 20+ source files, 2500+ lines of code
+- Express server with Socket.io
+- MongoDB schemas (User, Thread, Message, Claim)
+- Complete REST API (15 endpoints)
+- LLM integration services (Ollama)
+- Real-time updates via WebSocket
+- Fact-checking with web search
+- Claim detection and verification
+- Smart intervention policy
+- Authentication framework (JWT ready)
+- Request validation (Joi)
+- Comprehensive documentation
 
 ## 🚀 Quick Start
 
@@ -84,31 +82,28 @@ node verify-setup.js
 ```
 
 ## 📚 Documentation
-
-- **[QUICKSTART.md](backend/QUICKSTART.md)** - Get started in 3 steps
-- **[SETUP_GUIDE.md](SETUP_GUIDE.md)** - Comprehensive setup instructions
-- **[BACKEND_COMPLETE.md](BACKEND_COMPLETE.md)** - What has been implemented
 - **[backend/README.md](backend/README.md)** - API documentation
 
 ## 🏗️ Architecture
 
 ```
-┌─────────────┐
-│   React     │  ← Phase 1C (Next)
-│  Frontend   │
-└──────┬──────┘
-       │ HTTP/WebSocket
-┌──────▼──────┐
-│   Express   │  ✅ Complete
-│   API       │
-└──────┬──────┘
-       │
-   ┌───┴────┬─────────┬──────────┐
-   │        │         │          │
-┌──▼───┐ ┌─▼────┐ ┌──▼─────┐ ┌──▼────┐
-│MongoDB│ │Ollama│ │Socket.io│ │Search│
-│  DB   │ │ LLM  │ │Real-time│ │ API  │
-└───────┘ └──────┘ └─────────┘ └──────┘
+              ┌─────────────┐
+              │   React     │ 
+              │  Frontend   │
+              └──────┬──────┘
+                     │ HTTP/WebSocket
+                     │
+              ┌──────▼──────┐
+              │   Express   │ 
+              │   Backend   │ 
+              └──────┬──────┘
+                     │
+       ┌─────────┬───▼──────┬──────────┐
+       │         │          │          │
+  ┌───-▼───-┐ ┌─-▼───┐ ┌────▼────┐ ┌───▼──┐
+  │ MongoDB │ │Ollama│ │Socket.io│ │Search│
+  │   DB    │ │ LLM  │ │Real-time│ │ API  │
+  └─────────┘ └──────┘ └─────────┘ └──────┘
 ```
 
 ## 🔑 Key Features
@@ -179,7 +174,7 @@ node verify-setup.js
 
 ```
 FraySpace/
-├── backend/                    ✅ Complete
+├── backend/                    
 │   ├── src/
 │   │   ├── models/            # MongoDB schemas
 │   │   ├── routes/            # API endpoints
@@ -187,12 +182,9 @@ FraySpace/
 │   │   ├── middleware/        # Express middleware
 │   │   ├── utils/             # Utilities
 │   │   └── server.js          # Entry point
-│   ├── .env                   # Configuration
 │   ├── package.json
 │   └── README.md
 ├── frontend/                   🔄 Phase 1C (Next)
-├── SETUP_GUIDE.md
-├── BACKEND_COMPLETE.md
 └── README.md                   # This file
 ```
 
@@ -221,7 +213,7 @@ curl http://localhost:5000/api/threads
 
 **Note:** Currently using mock authentication for development. Enable full auth before production.
 
-## 🎨 Features in Detail
+## 🎨 Additional Features
 
 ### Claim Detection
 
@@ -253,43 +245,17 @@ LLM intervenes when:
 
 ## 📈 Next Steps
 
-### Phase 1B: LLM Integration Testing
-
-- Test Ollama connection
-- Verify summary generation
-- Test fact-checking
-- Validate interventions
-
-### Phase 1C: Frontend Development
-
-- Set up React app
-- Build UI components
-- Implement thread views
-- Create message composer
-
-### Phase 1D: Integration
-
-- Connect frontend to backend
-- Implement real-time features
-- Add LLM UI components
-- End-to-end testing
+### Phase 1B: Integrate user-level thread management
+- Add user authentication, authorization and profile management
+- Add user-level thread creation, deletion, and management
+- Add user-level message creation, deletion, and management
+- Validate LLM integration for fairness
 
 ## 🤝 Contributing
 
-This is currently in active development. Phase 1A (Backend) is complete.
+This project is currently in active development. Check the **[Next Steps](#-next-steps)** section to see what's planned next!   
 
-## 📝 License
+Feel free to contribute to the project by creating a pull request or opening an issue.
 
-MIT
-
-## 🔗 Resources
-
-- [Implementation Plan](frayspace_phase_1_implementation_488fcdcf.plan.md)
-- [Backend Documentation](backend/README.md)
-- [Setup Guide](SETUP_GUIDE.md)
-- [Quick Start](backend/QUICKSTART.md)
-
----
-
-**Status**: Backend Complete ✅ | Frontend In Progress 🔄
-**Last Updated**: January 5, 2026
+[Backend Documentation](backend/README.md)  
+**Last Updated**: January 15, 2026
